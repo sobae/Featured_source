@@ -1,0 +1,97 @@
+---- importaddress Matches (25 in 6 files) ----
+Rpcclient.cpp (src\rpc):    { "importaddress", 0 },
+Rpcclient.cpp (src\rpc):    { "importaddress", 2 },
+Rpcclient.cpp (src\rpc):    { "importaddress", 0 },
+Rpcdump.cpp (src\rpc):Value importaddress(const Array& params, bool fHelp)
+Rpchelp.cpp (src\rpc):            "3. includeWatchonly                 (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):            "3. includeWatchonly                 (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):            "4. includeWatchonly                 (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):            "2. includeWatchonly                 (bool, optional, default=false) Also include balance in watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):    mapHelpStrings.insert(std::make_pair("importaddress",
+Rpchelp.cpp (src\rpc):            "importaddress address(es) ( \"label\" rescan )\n"
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("importaddress", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\"") +
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("importaddress", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\" \"testing\" false") +
+Rpchelp.cpp (src\rpc):            + HelpExampleRpc("importaddress", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\", \"testing\", false")
+Rpchelp.cpp (src\rpc):            "2. includeWatchonly                 (bool, optional, default=false) Include balances in watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):            "3. includeWatchonly                 (bool, optional, default=false) Whether to include watchonly addresses (see 'importaddress').\n"
+Rpchelp.cpp (src\rpc):            "3. includeWatchonly                 (bool, optional, default=false) Whether to include watchonly addresses (see 'importaddress').\n"
+Rpchelp.cpp (src\rpc):            "3. includeWatchonly:                (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')"
+Rpchelp.cpp (src\rpc):            "4. includeWatchonly                 (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):            "3. includeWatchonly                 (bool, optional, default=false) Include transactions to watchonly addresses (see 'importaddress')\n"
+Rpchelp.cpp (src\rpc):    setAllowedWhenOffline.insert("importaddress");    
+Rpclist-cold.cpp (src\rpc):    { "wallet",             "importaddress",          &importaddress,          true,      false,      true },
+Rpclist.cpp (src\rpc):    { "wallet",             "importaddress",          &importaddress,          true,      false,      true },
+Rpcserver.h (src\rpc):extern json_spirit::Value importaddress(const json_spirit::Array& params, bool fHelp);
+---- listreceivedbyaddress Matches (14 in 5 files) ----
+Rpcclient.cpp (src\rpc):    { "listreceivedbyaddress", 0 },
+Rpcclient.cpp (src\rpc):    { "listreceivedbyaddress", 1 },
+Rpcclient.cpp (src\rpc):    { "listreceivedbyaddress", 2 },
+Rpchelp.cpp (src\rpc):    mapHelpStrings.insert(std::make_pair("listreceivedbyaddress",
+Rpchelp.cpp (src\rpc):            "listreceivedbyaddress ( minconf includeempty includeWatchonly )\n"
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listreceivedbyaddress", "")
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listreceivedbyaddress", "6 true")
+Rpchelp.cpp (src\rpc):            + HelpExampleRpc("listreceivedbyaddress", "6, true, true")
+Rpclist.cpp (src\rpc):    { "wallet",             "listreceivedbyaddress",  &listreceivedbyaddress,  false,     false,      true },
+Rpclist.cpp (src\rpc):    { "wallet",             "listreceivedbyaddress",  &listreceivedbyaddress,  false,     false,      true },
+Rpcserver.h (src\rpc):extern json_spirit::Value listreceivedbyaddress(const json_spirit::Array& params, bool fHelp);
+Rpcwallet.cpp (src\rpc):Value listreceivedbyaddress(const Array& params, bool fHelp)
+---- listtransactions Matches (24 in 5 files) ----
+Rpcclient.cpp (src\rpc):    { "listtransactions", 1 },
+Rpcclient.cpp (src\rpc):    { "listtransactions", 2 },
+Rpcclient.cpp (src\rpc):    { "listtransactions", 3 },
+Rpchelp.cpp (src\rpc):    mapHelpStrings.insert(std::make_pair("listtransactions",
+Rpchelp.cpp (src\rpc):            "listtransactions ( \"account\" count from includeWatchonly )\n"
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listtransactions", "") +
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listtransactions", "\"tabby\"") +
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listtransactions", "\"tabby\" 20 100") +
+Rpchelp.cpp (src\rpc):            + HelpExampleRpc("listtransactions", "\"tabby\", 20, 100")
+Rpclist.cpp (src\rpc):    { "wallet",             "listtransactions",       &listtransactions,       false,     false,      true },
+Rpclist.cpp (src\rpc):    { "wallet",             "listtransactions",       &listtransactions,       false,     false,      true },
+Rpcserver.h (src\rpc):extern json_spirit::Value listtransactions(const json_spirit::Array& params, bool fHelp);
+Rpcwallet.cpp (src\rpc):void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDepth, bool fLong, Array& ret, const isminefilter& filter, mc_TxDefRow *txdef)
+Rpcwallet.cpp (src\rpc):void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDepth, bool fLong, Array& ret, const isminefilter& filter)
+Rpcwallet.cpp (src\rpc):    ListTransactions(wtx,strAccount,nMinDepth,fLong,ret,filter,NULL);
+Rpcwallet.cpp (src\rpc):Value listtransactions(const Array& params, bool fHelp)
+Rpcwallet.cpp (src\rpc):            ListTransactions(wtx, strAccount, 0, true, ret, filter,&txdef);
+Rpcwallet.cpp (src\rpc):                ListTransactions(*pwtx, strAccount, 0, true, ret, filter);
+Rpcwallet.cpp (src\rpc):                ListTransactions(wtx, "*", 0, true, transactions, filter,&txdef);                
+Rpcwallet.cpp (src\rpc):                ListTransactions(tx, "*", 0, true, transactions, filter);
+Rpcwallet.cpp (src\rpc):        ListTransactions(wtx, "*", 0, false, details, filter);
+Rpcwallet.cpp (src\rpc):        ListTransactions(wtx, "*", 0, false, details, filter);
+---- listwallettransactions Matches (25 in 6 files) ----
+Rpcclient.cpp (src\rpc):    { "listwallettransactions", 0 },
+Rpcclient.cpp (src\rpc):    { "listwallettransactions", 1 },
+Rpcclient.cpp (src\rpc):    { "listwallettransactions", 2 },
+Rpcclient.cpp (src\rpc):    { "listwallettransactions", 3 },
+Rpchelp.cpp (src\rpc):    mapHelpStrings.insert(std::make_pair("listwallettransactions",
+Rpchelp.cpp (src\rpc):            "listwallettransactions ( count skip includeWatchonly verbose )\n"
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listwallettransactions", "") +
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listwallettransactions", "20 100") +
+Rpchelp.cpp (src\rpc):            + HelpExampleRpc("listwallettransactions", "20, 100")
+Rpclist.cpp (src\rpc):    { "wallet",             "listwallettransactions", &listwallettransactions, false,     false,      true },
+Rpclist.cpp (src\rpc):    { "wallet",             "listwallettransactions", &listwallettransactions, false,     false,      true },
+Rpcrawtransaction.cpp (src\rpc):// TODO too many duplicate code with ListWalletTransactions and may be AccepMultiChainTransaction
+Rpcserver.h (src\rpc):extern json_spirit::Value listwallettransactions(const json_spirit::Array& params, bool fHelp);
+Rpcwallettxs.cpp (src\rpc):Object ListWalletTransactions(const CWalletTx& wtx, bool fLong, const isminefilter& filter,const set<CTxDestination>* addresses,mc_Buffer *amounts,mc_Script *lpScript)
+Rpcwallettxs.cpp (src\rpc):Value listwallettransactions(const Array& params, bool fHelp)
+Rpcwallettxs.cpp (src\rpc):            Object entry=ListWalletTransactions(wtx,fLong,filter,NULL,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):                Object entry=ListWalletTransactions(*pwtx,fLong,filter,NULL,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):            Object entry=ListWalletTransactions(wtx,fLong,filter,lpFromAddresses,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):                Object entry=ListWalletTransactions(*pwtx,fLong,filter,lpFromAddresses,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):        entry=ListWalletTransactions(wtx,fLong,filter,NULL,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):        entry=ListWalletTransactions(wtx,fLong,filter,NULL,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):        entry=ListWalletTransactions(wtx,fLong,filter,lpFromAddresses,asset_amounts,lpScript);
+Rpcwallettxs.cpp (src\rpc):        entry=ListWalletTransactions(wtx,fLong,filter,lpFromAddresses,asset_amounts,lpScript);
+---- listaddresstransactions Matches (14 in 5 files) ----
+Rpcclient.cpp (src\rpc):    { "listaddresstransactions", 1 },
+Rpcclient.cpp (src\rpc):    { "listaddresstransactions", 2 },
+Rpcclient.cpp (src\rpc):    { "listaddresstransactions", 3 },
+Rpchelp.cpp (src\rpc):    mapHelpStrings.insert(std::make_pair("listaddresstransactions",
+Rpchelp.cpp (src\rpc):            "listaddresstransactions \"address\" ( count skip verbose )\n"
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listaddresstransactions", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\"") +
+Rpchelp.cpp (src\rpc):            + HelpExampleCli("listaddresstransactions", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\" 20 100") +
+Rpchelp.cpp (src\rpc):            + HelpExampleRpc("listaddresstransactions", "\"1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd\", 20, 100")
+Rpclist.cpp (src\rpc):    { "wallet",             "listaddresstransactions",&listaddresstransactions,false,     false,      true },
+Rpclist.cpp (src\rpc):    { "wallet",             "listaddresstransactions",&listaddresstransactions,false,     false,      true },
+Rpcserver.h (src\rpc):extern json_spirit::Value listaddresstransactions(const json_spirit::Array& params, bool fHelp);
+Rpcwallettxs.cpp (src\rpc):Value listaddresstransactions(const Array& params, bool fHelp)
