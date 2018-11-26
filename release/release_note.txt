@@ -1,0 +1,20 @@
+
+// 2018-02-28
+1. release version - 0.53.0
+
+2. Optimization Unspent List ��� ����
+   - Mining ���� UTXO 50���� �ڵ����� combine�ϸ鼭 TXFee�� �Ҹ��ϴ� ����
+   - runtime parameters help string ����
+     (autocombineminconf, autocombinemininputs, autocombinemaxinputs,autocombinedelay)
+
+3. Minimum TX Fee 
+   - size �� ���� relay fee �������� �ּ� fee å����
+
+4. limitfreerelay runtime �Ķ���� �̼������� AcceptToMemoryPool ���� ���� �߻� �κ� ����
+   - ���� ���� : "ERROR: AcceptToMemoryPool : free transaction rejected by rate limiter"
+   - MemPool �� relay���� ���ϰ� �߻� node���� pending �Ǿ� ó������ ����.
+   - �������� ���� �� [Check Debug] �޼��� �߰��Ͽ� ���� ����͸�.
+   - ���� ó�� Ȯ�� �� �ش� �ڵ� ��������.
+
+5. Create permission ���� ����
+   - multichain �������� �ݿ�
