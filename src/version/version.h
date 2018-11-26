@@ -1,0 +1,65 @@
+// Copyright (c) 2014-2017 Coin Sciences Ltd
+// MultiChain code distributed under the GPLv3 license, see COPYING file.
+
+#ifndef __VERSION_H_
+#define	__VERSION_H_
+
+#if 0//ithong_delete
+#define MULTICHAIN_VERSION_MAJOR     1
+#define MULTICHAIN_VERSION_MINOR     0
+#define MULTICHAIN_VERSION_REVISION  2
+//#define MULTICHAIN_VERSION_STAGE     9
+#define MULTICHAIN_VERSION_BUILD     1
+#endif
+
+#if 0//ithong_delete
+#define MULTICHAIN_PROTOCOL_VERSION 10009
+#endif
+
+#define MULTICHAIN_MIN_DOWNGRADE_PROTOCOL_VERSION 10008
+
+
+#if 0//ithong_delete
+#ifndef STRINGIZE
+#define STRINGIZE(X) DO_STRINGIZE(X)
+#endif
+
+#ifndef DO_STRINGIZE
+#define DO_STRINGIZE(X) #X
+#endif
+#endif
+
+#if 0//ithong_delete
+#define MULTICHAIN_BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
+    DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-" DO_STRINGIZE(suffix)
+
+#define MULTICHAIN_BUILD_DESC_FROM_UNKNOWN(maj, min, rev, build) \
+    DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build)
+#endif
+
+#if 0//ithong_delete
+#define MULTICHAIN_BUILD_DESC "0.33.0"	// HDAC 180213 -jhkim
+#define MULTICHAIN_BUILD_DESC_NUMERIC 10003901
+
+#ifndef MULTICHAIN_BUILD_DESC
+#ifdef BUILD_SUFFIX
+#define MULTICHAIN_BUILD_DESC MULTICHAIN_BUILD_DESC_WITH_SUFFIX(MULTICHAIN_VERSION_MAJOR, MULTICHAIN_VERSION_MINOR, MULTICHAIN_VERSION_REVISION, MULTICHAIN_VERSION_BUILD, BUILD_SUFFIX)
+#else
+#define MULTICHAIN_BUILD_DESC MULTICHAIN_BUILD_DESC_FROM_UNKNOWN(MULTICHAIN_VERSION_MAJOR, MULTICHAIN_VERSION_MINOR, MULTICHAIN_VERSION_REVISION, MULTICHAIN_VERSION_BUILD)
+#endif
+#endif
+#endif
+
+#if 0//ithong_delete
+#define MULTICHAIN_FULL_DESC(build, protocol) \
+    "build " build " protocol " DO_STRINGIZE(protocol)
+#endif
+
+#if 0//ithong_delete
+#ifndef MULTICHAIN_FULL_VERSION
+#define MULTICHAIN_FULL_VERSION MULTICHAIN_FULL_DESC(MULTICHAIN_BUILD_DESC, MULTICHAIN_PROTOCOL_VERSION)
+#endif
+#endif
+
+#endif	/* __VERSION_H_ */
+
